@@ -30,7 +30,7 @@ static CHDBTool *instance = nil;
 
 + (NSString *)dbPathWithDirectoryName:(NSString *)directoryName
 {
-    NSString *docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
     
     NSFileManager *filemanage = [NSFileManager defaultManager];
     
