@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "Test.h"
 #import "CHAddMessageViewController.h"
+#import "LocialNotificationManager.h"
 @interface TableViewController ()
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UIButton *button;
@@ -136,7 +137,7 @@
 */
 - (void)uuuuu
 {
-    
+    //[[LocialNotificationManager manager] registerLocalNotification:6 key:@"注册本地通知"];
     CHAddMessageViewController *vc = [[CHAddMessageViewController alloc]init];
     vc.isPlan = YES;
     [self.navigationController pushViewController:vc animated:YES];

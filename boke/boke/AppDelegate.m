@@ -8,6 +8,14 @@
 
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
+#import "LocialNotificationManager.h"
+
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
+
 @interface AppDelegate ()
 @property (nonatomic, strong) TabBarViewController *tab;
 @end
@@ -16,7 +24,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    
+    [[LocialNotificationManager manager] registerLocalNotification:6 key:@"注册本地通知"];
     return YES;
 }
 
@@ -50,7 +60,7 @@
 {
     
     
-    self.tab = self.window.rootViewController; 
+    self.tab = self.window.rootViewController;
     if ([shortcutItem.type isEqualToString:@"com.matcha00.plan"]) {
 
         
@@ -65,7 +75,6 @@
 
     }
 }
-
 
 
 @end
