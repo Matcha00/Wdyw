@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 #import "Test.h"
-#import "CHAddModel.h"
+#import "CHAddMessageViewController.h"
 @interface TableViewController ()
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UIButton *button;
@@ -19,7 +19,7 @@
 {
     if (!_button) {
         _button = [[UIButton alloc]init];
-        [_button setTitle:@"ppp" forState:UIControlStateNormal];
+        [_button setTitle:@"发布" forState:UIControlStateNormal];
         _button.backgroundColor = [UIColor redColor];
         [_button addTarget:self action:@selector(uuuuu) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -69,7 +69,25 @@
     
     return cell;
 }
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
 
+
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *dele = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        Test *model = self.array[indexPath.row];
+        [model deleteObject];
+        [self.array removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
+    }];
+    
+    return @[dele];
+}
 
 
 
@@ -118,11 +136,20 @@
 */
 - (void)uuuuu
 {
-    Test *test = [[Test alloc]init];
     
-    test.s = @"lllpppp";
-    [test save];
+    CHAddMessageViewController *vc = [[CHAddMessageViewController alloc]init];
+    vc.isPlan = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     self.array = [[Test findAll]mutableCopy];
     [self.tableView reloadData];
+    
 }
 @end

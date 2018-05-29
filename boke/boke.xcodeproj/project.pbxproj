@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18395B9E20BC7C4800702EA0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18395B9D20BC7C4800702EA0 /* libsqlite3.tbd */; };
+		18395BA120BDAC6800702EA0 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18395BA020BDAC6800702EA0 /* TabBarViewController.m */; };
 		1843458820BC349A004ECBCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843458720BC349A004ECBCE /* AppDelegate.m */; };
 		1843458B20BC349A004ECBCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843458A20BC349A004ECBCE /* ViewController.m */; };
 		1843458E20BC349A004ECBCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1843458C20BC349A004ECBCE /* Main.storyboard */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		18395B9D20BC7C4800702EA0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		18395B9F20BDAC6800702EA0 /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		18395BA020BDAC6800702EA0 /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		1843458320BC349A004ECBCE /* boke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1843458620BC349A004ECBCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1843458720BC349A004ECBCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				1843466420BC48ED004ECBCE /* CHAddMessageViewController.xib */,
 				1843466720BC492B004ECBCE /* CHAddModel.h */,
 				1843466820BC492B004ECBCE /* CHAddModel.m */,
+				18395B9F20BDAC6800702EA0 /* TabBarViewController.h */,
+				18395BA020BDAC6800702EA0 /* TabBarViewController.m */,
 			);
 			path = boke;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				1843466120BC4854004ECBCE /* CHPlanTableViewController.m in Sources */,
 				1843465920BC483C004ECBCE /* FMDatabaseAdditions.m in Sources */,
 				1843465320BC483C004ECBCE /* SVProgressAnimatedView.m in Sources */,
+				18395BA120BDAC6800702EA0 /* TabBarViewController.m in Sources */,
 				1843464E20BC483C004ECBCE /* TZImagePickerController.m in Sources */,
 				1843465C20BC483C004ECBCE /* FMDatabasePool.m in Sources */,
 				1843464020BC483C004ECBCE /* CHDBTool.m in Sources */,

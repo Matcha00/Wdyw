@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TabBarViewController.h"
 @interface AppDelegate ()
-
+@property (nonatomic, strong) TabBarViewController *tab;
 @end
 
 @implementation AppDelegate
@@ -46,6 +46,26 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+{
+    
+    
+    self.tab = self.window.rootViewController; 
+    if ([shortcutItem.type isEqualToString:@"com.matcha00.plan"]) {
+
+        
+        [self.tab setSelectedIndex:0];
+       
+
+    } else {
+
+        //TabBarViewController *tab = [[TabBarViewController alloc]init];
+        [self.tab setSelectedIndex:1];
+        
+
+    }
+}
+
 
 
 @end

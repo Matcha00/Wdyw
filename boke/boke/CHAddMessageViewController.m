@@ -8,6 +8,7 @@
 
 #import "CHAddMessageViewController.h"
 #import "CHAddModel.h"
+#import "Test.h"
 @interface CHAddMessageViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *addText;
 
@@ -33,10 +34,20 @@
 
 - (IBAction)save:(id)sender {
     
-    CHAddModel *model = [[CHAddModel alloc]init];
     
-    model.addMessage = self.addText.text;
-    [model save];
+    if (self.isPlan) {
+        Test *test = [[Test alloc]init];
+        
+        test.s = self.addText.text;
+        [test save];
+    } else {
+        CHAddModel *model = [[CHAddModel alloc]init];
+        
+        model.addMessage = self.addText.text;
+        [model save];
+    }
+    
+    
 }
 /*
 #pragma mark - Navigation

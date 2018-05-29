@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CHAddMessageViewController : UIViewController
-
+@property (nonatomic, assign) BOOL isPlan;
 @end
