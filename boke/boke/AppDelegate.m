@@ -27,6 +27,7 @@
    
     
     [[LocialNotificationManager manager] registerLocalNotification:6 key:@"注册本地通知"];
+    [[LocialNotificationManager manager] createLocalizedUserNotification];
     return YES;
 }
 
@@ -50,6 +51,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 
