@@ -162,7 +162,12 @@
     
     NSString *saveString = [userDefaults objectForKey:@"fast"];
     
-    if (![saveString isEqualToString:@""]) {
+    
+    
+    if (saveString.length == 0) {
+        return;
+    } else {
+        
         Test *model = [[Test alloc]init];
         
         model.s = saveString;
