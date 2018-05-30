@@ -40,6 +40,8 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.button];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sveSql:) name:@"fastsave" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,5 +154,25 @@
     self.array = [[Test findAll]mutableCopy];
     [self.tableView reloadData];
     
+}
+
+- (void)sveSql:(NSNotification *)note
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.mtcha00.fast"];
+    
+    NSString *saveString = [userDefaults objectForKey:@"fast"];
+    
+    if (![saveString isEqualToString:@""]) {
+        Test *model = [[Test alloc]init];
+        
+        model.s = saveString;
+        
+        if ([model save]) {
+            [userDefaults setObject:@"" forKey:@"fast"];
+        }
+        
+        self.array = [[Test findAll]mutableCopy];
+        [self.tableView reloadData];
+    }
 }
 @end
